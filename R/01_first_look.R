@@ -49,3 +49,5 @@ acc %>%
 # First check how the road names are actually written:
 acc %>% count(road, sort = TRUE) %>% filter(str_detect(road, "AP|C-3")) %>% print(n = 30)
 # Then: create an ex_toll variable and count per year. What do you see?
+
+
