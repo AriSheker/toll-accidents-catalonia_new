@@ -98,21 +98,27 @@ Tasks and owners are tracked in **Issues** and the **Project board**.
 
 ## 7. Repository structure
 
-| Folder | Content |
+| Path | Content |
 |---|---|
 | `data/raw/` | Original dataset (**never edit**) |
-| `data/processed/` | Translated / cleaned data (`accidents_EN.csv`) |
-| `R/` | Analysis scripts, numbered in run order |
-| `python/` | Helper scripts (translation of the raw file) |
-| `figures/` | Figures for the report |
-| `docs/` | Assignment text, overview PDF, codebook |
+| `data/processed/` | Translated data (`accidents_EN.csv`) and cleaned data (`accidents_clean.rds`, created by 02) |
+| `R/01_first_look.R` | First exploration (kept for reference) |
+| `R/02_clean_features.R` | Hidden NAs, derived features (`ex_toll`, `parallel`, road groups), leakage removal |
+| `R/03_eda.R` | Before/after comparisons, trends, recording artefacts -> fig 1-5 |
+| `R/04_models.R` | Logistic regression, tree, random forest; same CV folds and metrics; placebo test -> fig 6-9 |
+| `R/05_toll_effect.R` | Difference-in-differences: former toll roads vs other interurban roads -> fig 10 |
+| `R/run_all.R` | Runs 02-05 in order (about 5 min) |
+| `figures/` | All figures for the report (PNG, 300 dpi) |
+| `output/` | All result tables (CSV) |
+| `docs/results_summary.md` | Key numbers and how to read them, for writing the report |
+| `python/` | Helper script (translation of the raw file) |
 
 ## 8. How to run
 
 1. Open `toll-accidents-catalonia.Rproj` in RStudio (sets the working directory).
-2. Run the scripts in `R/` in numeric order.
-3. Packages: `tidyverse` (more will be added as we go).
+2. Install packages once: `install.packages(c("tidyverse", "rpart", "randomForest", "pROC"))`
+3. Run `source("R/run_all.R")`, or the scripts 02 -> 05 one by one.
+
+Results are reproducible (`set.seed(2026)` in 04).
 
 New to Git? Read [`GIT_GUIDE.md`](GIT_GUIDE.md). Rule: **pull before you start, push when you're done.**
-
-Test suiiiiiiiiiidfwefwfeeweaiuyseliuibnseklbsvbisibuevibuvewibuer

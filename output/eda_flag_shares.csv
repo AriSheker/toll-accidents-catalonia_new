@@ -1,0 +1,29 @@
+scope,name,post,share,n
+Former toll roads,Bicycle,before,0,453
+Former toll roads,Bicycle,after,0,143
+Former toll roads,Heavy vehicle,before,0.4083885209713024,453
+Former toll roads,Heavy vehicle,after,0.34965034965034963,143
+Former toll roads,Motorcycle,before,0.26048565121412803,453
+Former toll roads,Motorcycle,after,0.3916083916083916,143
+Former toll roads,Other unit (e-scooter?),before,0.024282560706401765,453
+Former toll roads,Other unit (e-scooter?),after,0.055944055944055944,143
+Former toll roads,Pedestrian,before,0.06181015452538632,453
+Former toll roads,Pedestrian,after,0.09090909090909091,143
+Former toll roads,Fatal,before,0.2185430463576159,453
+Former toll roads,Fatal,after,0.32167832167832167,143
+Former toll roads,Single vehicle,before,0.31346578366445915,453
+Former toll roads,Single vehicle,after,0.3356643356643357,143
+Rest of network,Bicycle,before,0.08291233283803863,20190
+Rest of network,Bicycle,after,0.10455037919826653,3692
+Rest of network,Heavy vehicle,before,0.10559683011391778,20190
+Rest of network,Heavy vehicle,after,0.09479956663055254,3692
+Rest of network,Motorcycle,before,0.3840515106488361,20190
+Rest of network,Motorcycle,after,0.4141386782231853,3692
+Rest of network,Other unit (e-scooter?),before,0.021396731054977712,20190
+Rest of network,Other unit (e-scooter?),after,0.06635969664138679,3692
+Rest of network,Pedestrian,before,0.22625061911837543,20190
+Rest of network,Pedestrian,after,0.207204767063922,3692
+Rest of network,Fatal,before,0.1241208519068846,20190
+Rest of network,Fatal,after,0.11971830985915492,3692
+Rest of network,Single vehicle,before,0.26433878157503715,20190
+Rest of network,Single vehicle,after,0.2887323943661972,3692
