@@ -10,7 +10,7 @@ One row = one accident with at least one death or serious injury. 24,478 rows, 2
 |---|---|---|
 | year | Any | Year |
 | date | dat | Date (dd/mm/yyyy) – used to build the before/after variable |
-| hour | hor | Time of day as a decimal number with comma ("23,33" ≈ 23:20) |
+| hour | hor | Clock time stored as HH,MM ("23,33" = 23:33, "22,3" = 22:30). Converted to minutes after midnight in 02_clean_features.R; see the checks there |
 | time_of_day | grupHor | Morning / Afternoon / Night |
 | weekday_group | tipDia | Mon–Thu, Fri, Sat, Sun |
 | day_group | grupDiaLab | Weekday / weekend |

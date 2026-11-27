@@ -98,21 +98,27 @@ Tasks and owners are tracked in **Issues** and the **Project board**.
 
 ## 7. Repository structure
 
-| Folder | Content |
+| Path | Content |
 |---|---|
 | `data/raw/` | Original dataset (**never edit**) |
-| `data/processed/` | Translated / cleaned data (`accidents_EN.csv`) |
-| `R/` | Analysis scripts, numbered in run order |
-| `python/` | Helper scripts (translation of the raw file) |
-| `figures/` | Figures for the report |
-| `docs/` | Assignment text, overview PDF, codebook |
+| `data/processed/` | Translated data (`accidents_EN.csv`); cleaned data (`accidents_clean.rds`, created by 02) |
+| `R/01_first_look.R` | First exploration |
+| `R/02_clean_features.R` | Hidden NAs -> "Unknown", clock time HH,MM -> decimal hours, road groups, predictor list |
+| `R/03_eda.R` | Before/after comparisons, trends, recording artefacts -> fig01-fig04 |
+| `R/04_models.R` | Logistic regression, tree, random forest; same CV folds; rare levels pooled per training fold; placebo test -> fig05-fig06 |
+| `R/05_toll_effect.R` | Difference-in-differences: former toll roads vs other interurban roads -> fig07 |
+| `R/run_all.R` | Deletes old outputs, then runs 02-05 in order (about 3 min) |
+| `figures/` | Report figures fig01-fig07 (numbered as in the report) + extra_*.png not used in the report |
+| `output/` | All result tables (CSV), out-of-fold predictions, confusion matrix |
+| `docs/results_summary.md` | Key numbers for the report |
+| `python/` | Translation of the raw file |
 
 ## 8. How to run
 
 1. Open `toll-accidents-catalonia.Rproj` in RStudio (sets the working directory).
-2. Run the scripts in `R/` in numeric order.
-3. Packages: `tidyverse` (more will be added as we go).
+2. Install packages once: `install.packages(c("tidyverse", "rpart", "randomForest", "pROC"))`
+3. Run `source("R/run_all.R")`. It starts from `data/processed/accidents_EN.csv`.
+
+Results are reproducible (`set.seed(2026)` in 04).
 
 New to Git? Read [`GIT_GUIDE.md`](GIT_GUIDE.md). Rule: **pull before you start, push when you're done.**
-
-Test suiiiiiiiiiidfwefwfeeweaiuyseliuibnseklbsvbisibuevibuvewibuer
